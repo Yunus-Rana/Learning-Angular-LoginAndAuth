@@ -1,0 +1,101 @@
+:host {
+  display: block;
+}
+
+.page-intro {
+  max-width: 620px;
+  margin: 0 0 46px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: #82877c;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.15px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 18px;
+  color: #333b34;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 5.5vw, 54px);
+  font-weight: 400;
+  letter-spacing: -1.6px;
+  line-height: 1.1;
+}
+
+.lead {
+  max-width: 560px;
+  margin: 0;
+  color: #777d73;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.about-card {
+  min-height: 190px;
+  padding: 23px;
+  border: 1px solid #e9e9e1;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.card-number {
+  display: block;
+  margin-bottom: 28px;
+  color: #96a18f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+}
+
+h2 {
+  margin: 0 0 10px;
+  color: #394139;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.about-card p {
+  margin: 0;
+  color: #7d8278;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.page-link {
+  color: #63745e;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.page-link span {
+  margin-left: 5px;
+}
+
+.page-link:hover {
+  color: #3f523b;
+}
+
+@media (max-width: 680px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    min-height: auto;
+  }
+
+  .card-number {
+    margin-bottom: 17px;
+  }
+}

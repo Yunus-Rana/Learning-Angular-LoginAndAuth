@@ -1,0 +1,158 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  color: #333b34;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 38px 20px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 32px;
+  color: #303a31;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #dce5d8;
+  color: #52644f;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.login-card {
+  width: min(100%, 420px);
+  padding: 38px;
+  border: 1px solid #e9e9e1;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.eyebrow {
+  margin: 0 0 11px;
+  color: #82877c;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.15px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 9px;
+  color: #333b34;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+}
+
+.intro {
+  margin: 0 0 29px;
+  color: #777d73;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin: 0 0 8px;
+  color: #50574d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.login-form input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  margin-bottom: 19px;
+  border: 1px solid #e2e4dc;
+  border-radius: 5px;
+  outline: none;
+  background: #fdfdfb;
+  color: #333b34;
+  font: inherit;
+  font-size: 13px;
+}
+
+.login-form input::placeholder {
+  color: #a4a79f;
+}
+
+.login-form input:focus {
+  border-color: #9baa91;
+  box-shadow: 0 0 0 3px #edf1e9;
+}
+
+.login-form button {
+  min-height: 44px;
+  margin-top: 5px;
+  border: 0;
+  border-radius: 5px;
+  background: #687a62;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.login-form button:hover {
+  background: #596c54;
+}
+
+.login-form button:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid #687a62;
+  outline-offset: 3px;
+}
+
+.page-note {
+  margin: 25px 0 0;
+  color: #9a9d94;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    justify-content: flex-start;
+    padding: 52px 18px 30px;
+  }
+
+  .brand {
+    margin-bottom: 27px;
+  }
+
+  .login-card {
+    padding: 29px 24px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+}

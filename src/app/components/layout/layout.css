@@ -1,0 +1,155 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  color: #333b34;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.workspace {
+  width: min(100% - 64px, 1080px);
+  margin: 0 auto;
+}
+
+.site-header {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8e8df;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #303a31;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #dce5d8;
+  color: #52644f;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.main-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-link {
+  position: relative;
+  padding: 33px 0 31px;
+  color: #7b8077;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #354336;
+}
+
+.nav-link.active::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: #91a18b;
+  content: "";
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  border: 1px solid #dfe3d9;
+  border-radius: 6px;
+  color: #465544;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+button:hover {
+  border-color: #cbd5c5;
+  background: #f0f3ed;
+}
+
+main {
+  min-height: calc(100vh - 153px);
+  padding: 66px 0 72px;
+}
+
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 0;
+  border-top: 1px solid #e8e8df;
+  color: #9a9d94;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-style: italic;
+}
+
+@media (max-width: 680px) {
+  .workspace {
+    width: min(100% - 36px, 520px);
+  }
+
+  .site-header {
+    min-height: 72px;
+  }
+
+  .brand {
+    gap: 7px;
+    font-size: 19px;
+  }
+
+  .brand-mark {
+    width: 27px;
+    height: 27px;
+  }
+
+  .main-nav {
+    gap: 18px;
+  }
+
+  .nav-link {
+    padding: 27px 0 25px;
+    font-size: 12px;
+  }
+
+  .header-action {
+    padding: 9px;
+  }
+
+  .header-action span:last-child {
+    display: none;
+  }
+
+  main {
+    min-height: calc(100vh - 139px);
+    padding: 48px 0 54px;
+  }
+
+  .site-footer {
+    gap: 12px;
+    font-size: 11px;
+  }
+}

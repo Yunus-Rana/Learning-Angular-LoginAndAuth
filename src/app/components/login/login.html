@@ -1,1 +1,40 @@
-<p>login works!</p>
+<main class="login-page">
+  <a class="brand" href="/" aria-label="Morrow home">
+    <span class="brand-mark" aria-hidden="true">m</span>
+    <span>Morrow</span>
+  </a>
+
+  <section class="login-card" aria-labelledby="login-title">
+    <p class="eyebrow">Welcome back</p>
+    <h1 id="login-title">Good to see you.</h1>
+    <p class="intro">Sign in to pick up where you left off.</p>
+
+    <form class="login-form" (ngSubmit)="onLogin()">
+      <label for="email">Email address</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        [(ngModel)]="loginobj.email"
+        placeholder="you@example.com"
+        autocomplete="email"
+        required
+      />
+
+      <label for="password">Password</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        [(ngModel)]="loginobj.password"
+        placeholder="Enter your password"
+        autocomplete="current-password"
+        required
+      />
+
+      <button type="submit">Sign in</button>
+    </form>
+  </section>
+
+  <p class="page-note">A little space to think clearly.</p>
+</main>

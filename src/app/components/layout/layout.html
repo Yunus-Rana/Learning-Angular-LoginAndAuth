@@ -1,0 +1,25 @@
+<div class="workspace">
+  <header class="site-header">
+    <a class="brand" routerLink="/home" aria-label="Morrow home">
+      <span class="brand-mark" aria-hidden="true">m</span>
+      <span>Morrow -- {{loggeduseremail}}</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+      <a class="nav-link" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
+      <a class="nav-link" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
+    </nav>
+
+    <button (click)="logout()" class="" >Logout</button>
+  </header>
+
+  <main>
+    <router-outlet />
+  </main>
+
+  <footer class="site-footer">
+    <span>Take your time.</span>
+    <span>A little space to think clearly.</span>
+  </footer>
+</div>
