@@ -1,59 +1,61 @@
-# Login
+# Morrow
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+Morrow is a small Angular workspace demo with a calm, minimal interface. Sign in to explore the Home, About, and Contact pages, all presented within a shared layout and navigation.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Responsive layout with a muted sage-and-neutral color palette
+- Email and password sign-in form
+- Home, About, and Contact pages with shared navigation
+- Angular route guard that redirects visitors who are not signed in to `/login`
+- Not-found page for unrecognized routes
+- Login state stored in browser `localStorage`
 
-```bash
-ng serve
-```
+## Getting started
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Requirements
 
-## Code scaffolding
+- Node.js and npm
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Install and run
 
 ```bash
-ng generate --help
+npm install
+npm start
 ```
 
-## Building
+Open the local URL printed by Angular CLI (typically `http://localhost:4200/`).
 
-To build the project run:
+## Demo sign-in
+
+This project currently has no authentication server. The sign-in form accepts a valid email address and a non-empty password, then stores the email in `localStorage` under the `newuser` key. This is only a front-end demonstration and is not suitable for protecting real user data.
+
+Use the **Logout** button to clear the stored value. If you need to reset the demo manually, remove `newuser` from the browser's local storage.
+
+## Routes
+
+| Route | Description | Access |
+| --- | --- | --- |
+| `/login` | Sign-in form | Public |
+| `/home` | Workspace overview | Requires sign-in |
+| `/about` | About the Morrow workspace | Requires sign-in |
+| `/contact` | Contact information | Requires sign-in |
+| Any unmatched URL | Not-found page | Public |
+
+The Home, About, and Contact pages are child routes of the shared layout. The `canActivateChild` auth guard protects them.
+
+## Development commands
 
 ```bash
-ng build
+npm start                 # Start the development server
+npm run build             # Create a production build in dist/
+npm test                  # Run unit tests
+npm run watch             # Rebuild on source changes
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Built with
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular
+- TypeScript
+- CSS
+- Angular Router
