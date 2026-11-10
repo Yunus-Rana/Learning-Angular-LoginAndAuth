@@ -2,7 +2,7 @@
   <header class="site-header">
     <a class="brand" routerLink="/home" aria-label="Morrow home">
       <span class="brand-mark" aria-hidden="true">m</span>
-      <span>Morrow -- {{loggeduseremail}}</span>
+      <span>Morrow</span>
     </a>
 
     <nav class="main-nav" aria-label="Main navigation">
@@ -11,7 +11,10 @@
       <a class="nav-link" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
     </nav>
 
-    <button (click)="logout()" class="" >Logout</button>
+    <div class="account-actions">
+      <span class="account-email" [title]="loggeduseremail">{{ loggeduseremail }}</span>
+      <button type="button" (click)="logout()">Logout</button>
+    </div>
   </header>
 
   <main>

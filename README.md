@@ -1,21 +1,23 @@
 # Morrow
 
-Morrow is a small Angular workspace demo with a calm, minimal interface. Sign in to explore the Home, About, and Contact pages, all presented within a shared layout and navigation.
+Morrow is a small Angular workspace with a calm, minimal interface. Sign in to explore the Home, About, and Contact pages inside a shared layout with responsive navigation.
 
 ## Features
 
-- Responsive layout with a muted sage-and-neutral color palette
+- Muted sage-and-neutral visual theme
 - Email and password sign-in form
-- Home, About, and Contact pages with shared navigation
-- Angular route guard that redirects visitors who are not signed in to `/login`
+- Login request sent to the UserApp API
+- Home, About, and Contact pages protected by an Angular child-route guard
+- User email displayed in the workspace header
+- Logout clears the locally stored login value
 - Not-found page for unrecognized routes
-- Login state stored in browser `localStorage`
 
 ## Getting started
 
 ### Requirements
 
-- Node.js and npm
+- Node.js
+- npm
 
 ### Install and run
 
@@ -24,25 +26,32 @@ npm install
 npm start
 ```
 
-Open the local URL printed by Angular CLI (typically `http://localhost:4200/`).
+Open the local URL printed by Angular CLI, typically `http://localhost:4200/`.
 
-## Demo sign-in
+## Sign-in and route protection
 
-This project currently has no authentication server. The sign-in form accepts a valid email address and a non-empty password, then stores the email in `localStorage` under the `newuser` key. This is only a front-end demonstration and is not suitable for protecting real user data.
+The login form sends `EmailId` and `Password` to:
 
-Use the **Logout** button to clear the stored value. If you need to reset the demo manually, remove `newuser` from the browser's local storage.
+```text
+https://projectapi.gerasim.in/api/UserApp/login
+```
+
+On a successful response, the app stores the returned email under the `newuser` key in browser `localStorage` and navigates to `/home`. The auth guard checks for that value before allowing access to the Home, About, and Contact child routes. Use **Logout** to remove it.
+
+This is a front-end demo. A value in `localStorage` is not a secure authentication mechanism and should not be used to protect sensitive data in a production application.
 
 ## Routes
 
 | Route | Description | Access |
 | --- | --- | --- |
 | `/login` | Sign-in form | Public |
+| `/` | Redirects to `/home` | Requires sign-in |
 | `/home` | Workspace overview | Requires sign-in |
 | `/about` | About the Morrow workspace | Requires sign-in |
 | `/contact` | Contact information | Requires sign-in |
 | Any unmatched URL | Not-found page | Public |
 
-The Home, About, and Contact pages are child routes of the shared layout. The `canActivateChild` auth guard protects them.
+Home, About, and Contact are child routes of the shared layout and are protected by a `canActivateChild` guard.
 
 ## Development commands
 
@@ -57,5 +66,6 @@ npm run watch             # Rebuild on source changes
 
 - Angular
 - TypeScript
-- CSS
 - Angular Router
+- Angular Forms
+- RxJS
